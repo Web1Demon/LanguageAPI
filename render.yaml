@@ -1,0 +1,25 @@
+services:
+  - name: languageapi
+    type: web
+    env: docker
+    plan: free
+    region: oregon
+    rootDir: .
+    branch: main
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        value: 127.0.0.1
+      - key: DB_DATABASE
+        value: language_api
+      - key: root
+        value: your-database-username
+      - key: DB_PASSWORD
+        value: 
